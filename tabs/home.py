@@ -57,8 +57,8 @@ class HomeTab:
 
         status_ok: DeltaGenerator = self.tab.container()
         # def load_farm(self) -> None:
-        # if not buttonok:
-        #     return
+        if not buttonok:
+            return
         farm_tab: DeltaGenerator
         bumpkin_tab: DeltaGenerator
         worth_tab: DeltaGenerator
@@ -72,8 +72,8 @@ class HomeTab:
 
         app_state: dict[str, list[str]] = st.experimental_get_query_params()
         app_state["farm"] = [self.farm_id]
-        # url: str = f"https://api.sunflower-land.com/visit/{self.farm_id}"
-        url: str = f"https://api.sunflower-land.com/visit/137396"
+        url: str = f"https://api.sunflower-land.com/visit/{self.farm_id}"
+        # url: str = f"https://api.sunflower-land.com/visit/137396"
         st.experimental_set_query_params(**app_state)
 
         response: requests.Response = requests.get(url)
